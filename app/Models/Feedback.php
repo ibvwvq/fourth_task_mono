@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Rating extends Model
+class Feedback extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     protected $guarded = false;
-    protected $table = 'ratings';
+    protected $table = 'feedback';
     public $timestamps = false;
 }
