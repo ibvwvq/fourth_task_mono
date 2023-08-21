@@ -66,7 +66,7 @@ Artisan::command('fourth_task_mono', function () {
                     }
                 }
             }
-            // передаем массив с id нужных отзывов в новый обьект FeedbackExport, сохраняем записи в feedback.csv,
+            // передаем массив с id нужных отзывов в новый обьект FeedbackExport, сохраняем обьект в feedback.csv, сохраняется в ..\storage\framework\cache\
             Excel::download(new FeedbackExport($array), 'feedback.csv');
         });
 })->purpose('4 задание для собеседования в компанию MONO');
