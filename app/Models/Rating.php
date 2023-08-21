@@ -14,4 +14,9 @@ class Rating extends Model
     protected $guarded = false;
     protected $table = 'ratings';
     public $timestamps = false;
+
+    public function feedback()
+    {
+        return $this->belongsTo(Feedback::class);
+    }
 }

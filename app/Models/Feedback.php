@@ -14,4 +14,9 @@ class Feedback extends Model
     protected $guarded = false;
     protected $table = 'feedback';
     public $timestamps = false;
+
+    public function rating()
+    {
+        return $this->hasOne(Rating::class);
+    }
 }

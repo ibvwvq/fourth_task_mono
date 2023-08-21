@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedInteger('numberRating')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('product_id')->nullable();
-            $table->unsignedBigInteger('feedback_id')->nullable();
+            $table->unsignedBigInteger('feedback_id');
 
             $table->index('user_id','rating_user_idx');
             $table->index('product_id','rating_product_idx');
