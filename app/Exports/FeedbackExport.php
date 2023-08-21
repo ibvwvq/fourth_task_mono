@@ -1,17 +1,27 @@
 <?php
 
 namespace App\Exports;
-
 use App\Models\Feedback;
+use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromCollection;
+
 
 class FeedbackExport implements FromCollection
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function collection()
+    use Exportable;
+
+    public function __construct(array $array)
     {
-        return Feedback::all();
+        $this->array = $array;
+    }
+
+    public function collection(): \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|array
+    {
+       $feedbacks =  Feedback::query();
+       $feedbacks
+           ->whereIn('id' ,$this->array)
+          ->get();
+       return $feedbacks->get();
     }
 }
+

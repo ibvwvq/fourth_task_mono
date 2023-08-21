@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-//        User::factory(10)->create();
-//        Product::factory(10)->create();
+        User::factory(10)->create();
+        Product::factory(10)->create();
 
-        //Feedback::factory(10)->create();
-        Rating::factory(10)->create();
+          //Feedback::factory(50)->create();
+         Rating::factory(50)->create();
     }
 }
