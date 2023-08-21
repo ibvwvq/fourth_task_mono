@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nameProduct')->nullable();
+            $table->double('priceProduct')->nullable()->default(0.00);
+
+            $table->softDeletes();
         });
     }
 
